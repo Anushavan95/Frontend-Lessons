@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  background-image: url(../images/web-development.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header-html {
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.trans-color {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.block-section {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  grid-gap: 20px;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.show-css {
+  background-image: url(../images/css.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.show-html {
+  background-image: url(../images/html5-1.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.show-bootstrap {
+  background-image: url(../images/bootstrap.png);
+  background-size: cover;
+  position: relative;
+}
+
+.show-sass {
+  background-image: url(../images/sass-block.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+@mixin blockColor ($wontW, $col) {
+  position: absolute;
+  width: 100%;
+  background: rgba(3, 16, 23, 0.5);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  padding: 15px;
+  font-weight: $wontW;
+  color: $col;
+}
+
+.block-color {
+  @include blockColor(bold, red);
+
+  .lessons {
+    font-family: Verdana, Tahoma, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.block-lessons {
+  transition: 1s;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  border: 1px solid;
+  transition: 0.5s all ease-in-out;
+
+  h3 {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+@mixin showLess {
+  border-radius: 15px;
+  visibility: hidden;
+  position: absolute;
+  height: 250px;
+  background-size: cover;
+  background-color: black;
+  position: absolute;
+  z-index: 30;
+  transform: translateY(-400px);
+  z-index: 15;
+  width: 500px;
+  transition: 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: -1000px;
+  margin: 10% auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.show-lesson {
+  @include showLess();
+}
+
+@mixin btn {
+  width: 30%;
+  margin-top: 30px;
+  padding: 15px;
+  transition: 1s;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+button {
+  @include btn();
+
+  &:hover {
+    background-color: rgb(172, 165, 154);
+  }
+}
+
+.block-add {
+  transform: translateY(100px) !important;
+  z-index: 9999;
+  transform: translateX(00px);
+}
+
+.html-block {
+  background-image: url(../images/html5-1.jpg);
+}
+
+.css-block {
+  background-image: url(../images/css.jpg);
+}
+
+.sass-block {
+  background-image: url(../images/sass-block.jpg);
+  background-size: cover;
+}
+
+.bootstrap-block {
+  background-image: url(../images/bootstrap.png);
+}
+
+.main-big-section {
+  z-index: 1000;
+  // position: absolute;
+  transition: 2s;
+}
+
+.hide {
+  visibility: hidden;
+}
